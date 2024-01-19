@@ -14,4 +14,5 @@
     <string name="menu_todo">To-Do List</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo_header">What Do I Have To Do Today?</string>
 </resources>
