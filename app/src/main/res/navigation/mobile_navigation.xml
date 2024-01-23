@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_courses"
-        android:name="com.example.project01cs2340.ui.gallery.GalleryFragment"
+        android:name="com.example.project01cs2340.CoursesFragment"
         android:label="@string/menu_courses"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_courses" />
 
     <fragment
         android:id="@+id/nav_assignments"
