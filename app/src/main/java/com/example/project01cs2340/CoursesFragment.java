@@ -3,6 +3,7 @@ package com.example.project01cs2340;
 
 import android.animation.LayoutTransition;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -21,11 +22,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
@@ -41,17 +45,17 @@ public class CoursesFragment extends Fragment {
     private RecyclerView.Adapter courseAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private static final String TAG = "Courses App";
-    List<Course> coursesList;
-    EditText id_input, title_input, professor_input, days_input, time_input;
+    List<Course> courseList;
+    EditText id_input, title_input, professor_input, time_input;
     CheckBox monday, tuesday, wednesday, thursday, friday;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        coursesList = CourseApplication.getCoursesList();
+        courseList = CourseApplication.getCoursesList();
 
-        Log.d(TAG, "onCreate: " + coursesList.toString());
+        Log.d(TAG, "onCreate: " + courseList.toString());
     }
 
     @Override
@@ -94,10 +98,11 @@ public class CoursesFragment extends Fragment {
                 friday = (CheckBox) courseDialog.findViewById(R.id.friday);
                 time_input = courseDialog.findViewById(R.id.time_input);
 
+
                 Button addButton = courseDialog.findViewById(R.id.add_button);
                 addButton.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
+                    public void onClick(View view) {
                         String m = monday.isChecked() ? "M" : "";
                         String t = tuesday.isChecked() ? "T" : "";
                         String w = wednesday.isChecked() ? "W" : "";
@@ -108,7 +113,7 @@ public class CoursesFragment extends Fragment {
                         Course newCourse = new Course(id_input.getText().toString(), title_input.getText().toString(),
                                     professor_input.getText().toString(), days, time_input.getText().toString());
 
-                        coursesList.add(newCourse);
+                        courseList.add(newCourse);
                         courseDialog.dismiss();
                         Toast.makeText(getActivity(), "New Course Added", Toast.LENGTH_LONG).show();
                     }
@@ -126,13 +131,14 @@ public class CoursesFragment extends Fragment {
             }
         });
 
+
         recyclerView = (RecyclerView) getView().findViewById(R.id.recycleView);
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        courseAdapter = new CourseAdapter(getContext(), coursesList);
+        courseAdapter = new CourseAdapter(getContext(), courseList);
         recyclerView.setAdapter(courseAdapter);
     }
 }
