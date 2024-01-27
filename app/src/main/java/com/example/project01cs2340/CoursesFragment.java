@@ -1,20 +1,11 @@
 package com.example.project01cs2340;
 
 
-import android.animation.LayoutTransition;
 import android.app.Dialog;
-import android.app.TimePickerDialog;
-import android.os.Build;
 import android.os.Bundle;
-
-import androidx.annotation.RequiresApi;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.transition.AutoTransition;
-import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,23 +13,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Objects;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CoursesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CoursesFragment extends Fragment {
 
     private RecyclerView recyclerView;

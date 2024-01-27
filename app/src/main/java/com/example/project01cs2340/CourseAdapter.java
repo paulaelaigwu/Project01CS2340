@@ -5,8 +5,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +52,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.courseView
                 courseDialog.setContentView(R.layout.course_dialog_layout);
                 courseDialog.setTitle("Edit Course");
                 Button ok = courseDialog.findViewById(R.id.add_button);
-                ok.setText("OK");
+                ok.setText(R.string.ok);
 
                 EditText id_input = courseDialog.findViewById(R.id.id_input);
                 EditText title_input = courseDialog.findViewById(R.id.title_input);
@@ -140,7 +138,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.courseView
         return courseList.size();
     }
 
-    public class courseViewHolder extends RecyclerView.ViewHolder {
+    public static class courseViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_courseId;
 
