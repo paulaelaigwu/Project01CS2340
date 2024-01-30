@@ -45,7 +45,8 @@ public class ToDo extends AppCompatActivity implements DialogCloseListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_blank2);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
+        getSupportActionBar();
 
         db = new DatabaseHandler(this);
         db.openDatabase();
