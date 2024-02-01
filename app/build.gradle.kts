@@ -6,6 +6,10 @@ android {
     namespace = "com.example.project01cs2340"
     compileSdk = 34
 
+
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
     defaultConfig {
         applicationId = "com.example.project01cs2340"
         minSdk = 24
