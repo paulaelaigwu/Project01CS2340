@@ -54,7 +54,9 @@ public class AddAssignment extends AppCompatActivity implements DatePickerDialog
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        String date = "month/day/year" + (month+1) "/" + dayOfMonth + "/" + year;
+        String s1 = "/" + dayOfMonth + "/" + year;
+        String date = String.format("month/day/year%d", month + 1);
+        String.format("/%d/%d", dayOfMonth, year);
         DueDate.setText(date);
 
     }
