@@ -22,7 +22,7 @@
             android:title="@string/menu_exams" />
         <item
             android:id="@+id/nav_todo"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/todo_list_icon"
             android:title="@string/menu_todo" />
     </group>
 </menu>
