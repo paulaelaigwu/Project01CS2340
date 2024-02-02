@@ -32,7 +32,7 @@ public class CoursesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        courseList = CourseApplication.getCoursesList();
+        courseList = CourseApplication.getCourseList();
 
         Log.d(TAG, "onCreate: " + courseList.toString());
     }

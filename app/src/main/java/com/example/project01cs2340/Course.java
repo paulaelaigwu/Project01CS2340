@@ -32,8 +32,6 @@ public class Course {
                 '}';
     }
 
-
-
     public String getId() {
         return id;
     }
