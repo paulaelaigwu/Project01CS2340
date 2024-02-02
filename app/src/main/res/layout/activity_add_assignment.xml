@@ -25,7 +25,7 @@
         android:layout_width="324dp"
         android:layout_height="66dp"
         android:ems="10"
-        android:hint="Course Name"
+        android:hint="Assignment Name"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -36,19 +36,22 @@
         android:id="@+id/btn_DueDate"
         android:layout_width="324dp"
         android:layout_height="66dp"
+        android:layout_marginTop="148dp"
         android:text="Due Date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_DateDue"
         android:layout_width="222dp"
         android:layout_height="48dp"
         android:layout_marginTop="4dp"
+        android:layout_marginBottom="465dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +64,7 @@
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_DateDue"
         app:layout_constraintVertical_bias="0.911" />
