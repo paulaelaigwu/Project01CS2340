@@ -28,4 +28,4 @@ public class Assignment implements Comparable<Assignment>{
         return this.dateDue.compareTo(other.dateDue);
     }
 }
-}
+
