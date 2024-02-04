@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Card_AssignmentItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewCourseId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course ID: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textViewAssignmentName"
+        android:layout_width="364dp"
+        android:layout_height="64dp"
+        android:text="Assignment Name: "
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textViewDueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Due Date: "
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/etCourseId"
+        android:layout_width="384dp"
+        android:layout_height="55dp"
+        android:layout_margin="16dp"
+        android:hint="Course ID"
+        app:layout_constraintBottom_toTopOf="@+id/etAssignmentName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/etAssignmentName"
+        android:layout_width="384dp"
+        android:layout_height="55dp"
+        android:layout_margin="16dp"
+        android:hint="Assignment Name"
+        app:layout_constraintBottom_toTopOf="@+id/etDueDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCourseId"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/etDueDate"
+        android:layout_width="384dp"
+        android:layout_height="55dp"
+        android:layout_margin="16dp"
+        android:hint="Due Date (mm/dd/yyyy)"
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveAssignment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAssignmentName"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/btnSaveAssignment"
+        android:layout_width="127dp"
+        android:layout_height="59dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="231dp"
+        android:layout_marginTop="231dp"
+        android:text="Save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCancelAssignment"
+        android:layout_width="127dp"
+        android:layout_height="57dp"
+        android:layout_gravity="bottom"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSaveAssignment"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDueDate"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
