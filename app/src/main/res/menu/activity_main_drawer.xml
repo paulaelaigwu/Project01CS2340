@@ -10,19 +10,20 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_courses"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/icons8_course_100"
             android:title="@string/menu_courses" />
         <item
             android:id="@+id/nav_assignments"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/icons8_assignment_100"
             android:title="@string/menu_assignments" />
         <item
             android:id="@+id/nav_exams"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/icons8_exam_100"
             android:title="@string/menu_exams" />
         <item
             android:id="@+id/nav_todo"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/icons8_list_100"
             android:title="@string/menu_todo" />
+
     </group>
 </menu>
