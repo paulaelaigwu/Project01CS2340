@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,15 +16,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExamFragment extends Fragment implements OnExamAddedListener {
-
-    private final List<ExamModel> examList = new ArrayList<>();
-    private ExamAdapter examAdapter;
+public class ExamFragment extends Fragment {
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter examAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+    List<ExamModel> examList;
+    EditText etCourseCode, etExamName, etDate, etTime, etLocation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        examList = ExamApplication.getExamList();
     }
 
     @Override
@@ -43,63 +48,51 @@ public class ExamFragment extends Fragment implements OnExamAddedListener {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        setupRecyclerView(view);
-
-        view.findViewById(R.id.btnAddExam).setOnClickListener(v -> showAddExamDialog());
-    }
-
-    private void setupRecyclerView(View rootView) {
-        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerViewExams);
-        examAdapter = new ExamAdapter(examList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(examAdapter);
-    }
-
-    private void showAddExamDialog() {
-        final Dialog examDialog = new Dialog(requireActivity());
-        examDialog.setContentView(R.layout.fragment_add_exam);
-        examDialog.setTitle("Add New Exam");
-
-        Button addButton = examDialog.findViewById(R.id.add_button);
-        addButton.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.btnAddExam).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ExamModel newExam = createExamModelFromInputs(examDialog);
+                final Dialog examDialog = new Dialog(requireActivity());
+                examDialog.setContentView(R.layout.fragment_add_exam);
+                examDialog.setTitle("Add New Exam");
 
-                examList.add(newExam);
-                examAdapter.notifyDataSetChanged();
+                etCourseCode = examDialog.findViewById(R.id.etCourseCode);
+                etExamName = examDialog.findViewById(R.id.etExamName);
+                etDate = examDialog.findViewById(R.id.etDate);
+                etTime = examDialog.findViewById(R.id.etTime);
+                etLocation = examDialog.findViewById(R.id.etLocation);
 
-                examDialog.dismiss();
+                Button addButton = examDialog.findViewById(R.id.btnSaveExam);
+                addButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ExamModel newExam = new ExamModel(etCourseCode.getText().toString(), etExamName.getText().toString(),
+                                etDate.getText().toString(), etTime.getText().toString(), etLocation.getText().toString());
+
+                        examList.add(newExam);
+                        examDialog.dismiss();
+                        Toast.makeText(getActivity(), "New Exam Added", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                Button cancelButton = examDialog.findViewById(R.id.btnCancelExam);
+                cancelButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        examDialog.cancel();
+                    }
+                });
+
+                examDialog.show();
             }
         });
 
-        Button cancelButton = examDialog.findViewById(R.id.cancel_button);
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                examDialog.cancel();
-            }
-        });
+        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.recyclerViewExams);
+        recyclerView.setHasFixedSize(true);
 
-        examDialog.show();
-    }
+        layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
 
-
-
-    private ExamModel createExamModelFromInputs(Dialog examDialog) {
-        return null;
-        // Not working when the ids are inserted so I just put null
-    }
-
-    @Override
-    public void onExamAdded(ExamModel newExam) {
-
-        examList.add(newExam);
-        examAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onExamAdded() {
-
+        examAdapter = new ExamAdapter(examList);
+        recyclerView.setAdapter(examAdapter);
     }
 }

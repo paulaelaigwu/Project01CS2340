@@ -28,15 +28,14 @@
     <string name="task">Task</string>
     <string name="add_assignment">Add Assignment</string>
     <string name="add_exam">Add Exam</string>
-    <string name="examcourse_id">Course ID:</string>
-    <string name="exam_name">Exam Name:</string>
-    <string name="date_amp_time"><![CDATA[Date & Time:]]></string>
+    <string name="examcourse_id">Course ID</string>
+    <string name="exam_name">Exam Name</string>
     <string name="location">Location:</string>
     <string name="exam_cancel">Cancel</string>
     <string name="exam_save">Save</string>
     <string name="exam_location">Location</string>
     <string name="exam_name2">Exam Name</string>
     <string name="exam_course_id">Course ID</string>
-    <string name="exam_date">Date (mm/dd/yyyy)</string>
+    <string name="date">Date (mm/dd/yyyy)</string>
     <string name="exam_time">Time</string>
 </resources>

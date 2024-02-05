@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -65,8 +66,20 @@ public class AssignmentFragment extends Fragment {
                 textviewDueDate = assignmentDialog.findViewById(R.id.etDueDate);
 
                 Button addButton = assignmentDialog.findViewById(R.id.btnSaveAssignment);
-                Button cancelButton = assignmentDialog.findViewById(R.id.btnCancelAssignment);
+                addButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Assignment newAssignment = new Assignment(textviewCourseID.getText().toString(), textviewAssignmentName.getText().toString(),
+                                textviewDueDate.getText().toString());
 
+                        assignmentList.add(newAssignment);
+                        assignmentDialog.dismiss();
+                        Toast.makeText(getActivity(), "New Assignment Added", Toast.LENGTH_LONG).show();
+
+                    }
+                });
+
+                Button cancelButton = assignmentDialog.findViewById(R.id.btnCancelAssignment);
                 cancelButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
