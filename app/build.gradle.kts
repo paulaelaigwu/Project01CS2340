@@ -6,6 +6,10 @@ android {
     namespace = "com.example.project01cs2340"
     compileSdk = 34
 
+
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
     defaultConfig {
         applicationId = "com.example.project01cs2340"
         minSdk = 24
@@ -49,4 +53,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("com.google.android.material:material:1.11.0")
 }

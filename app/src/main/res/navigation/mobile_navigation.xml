@@ -19,13 +19,13 @@
 
     <fragment
         android:id="@+id/nav_assignments"
-        android:name="com.example.project01cs2340.ui.slideshow.SlideshowFragment"
+        android:name="com.example.project01cs2340.AssignmentFragment"
         android:label="@string/menu_assignments"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_exams"
-        android:name="com.example.project01cs2340.BlankFragment"
+        android:name="com.example.project01cs2340.ExamFragment"
         android:label="@string/menu_exams"
         tools:layout="@layout/fragment_blank" />
 

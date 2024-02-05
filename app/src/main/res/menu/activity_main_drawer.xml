@@ -24,6 +24,5 @@
             android:id="@+id/nav_todo"
             android:icon="@drawable/icons8_list_100"
             android:title="@string/menu_todo" />
-
     </group>
 </menu>
