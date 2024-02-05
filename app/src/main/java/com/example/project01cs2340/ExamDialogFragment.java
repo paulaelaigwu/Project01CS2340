@@ -3,11 +3,11 @@ package com.example.project01cs2340;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +16,11 @@ import androidx.fragment.app.DialogFragment;
 public class ExamDialogFragment extends DialogFragment {
 
     private EditText etCourseCode, etExamName, etDate, etTime, etLocation;
+    private OnExamAddedListener onExamAddedListener;
+
+    public void setOnExamAddedListener(OnExamAddedListener listener) {
+        this.onExamAddedListener = listener;
+    }
 
     @NonNull
     @Override
@@ -50,15 +55,10 @@ public class ExamDialogFragment extends DialogFragment {
 
         if (!courseCode.isEmpty() && !examName.isEmpty() && !date.isEmpty() && !time.isEmpty() && !location.isEmpty()) {
             ExamModel exam = new ExamModel(courseCode, examName, date, time, location);
-
-            Bundle result = new Bundle();
-            result.putParcelable("exam", (Parcelable) exam);
-
-            getParentFragmentManager().setFragmentResult("addExamResult", result);
-
+            onExamAddedListener.onExamAdded(exam);
             dismiss();
         } else {
-            System.out.println("Help!!!");
+            Toast.makeText(requireActivity(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -66,4 +66,3 @@ public class ExamDialogFragment extends DialogFragment {
         dismiss();
     }
 }
-
