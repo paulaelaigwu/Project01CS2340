@@ -115,6 +115,8 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.todoViewHolder
     public static class todoViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_task;
+        TextView tv_day;
+        TextView tv_time;
         LinearLayout parentLayout;
 
         public todoViewHolder(@NonNull View itemView) {

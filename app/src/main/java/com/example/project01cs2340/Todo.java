@@ -3,6 +3,8 @@ package com.example.project01cs2340;
 import android.graphics.Color;
 public class Todo {
     private String task;
+    private String day;
+    private String time;
 
     public Todo(String task) {
         this.task = task;
@@ -22,4 +24,5 @@ public class Todo {
     public void setTask(String task) {
         this.task = task;
     }
+
 }
