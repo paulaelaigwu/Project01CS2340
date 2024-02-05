@@ -3,8 +3,7 @@
     android:id="@+id/Card_ExamItem"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -25,13 +24,17 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="8dp">
+
             <TextView
                 android:id="@+id/textViewCourseCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:text="@string/examcourse_id"
-                android:textSize="16sp" />
+                android:inputType="textCapCharacters"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
 
             <TextView
                 android:id="@+id/textViewExamName"
@@ -39,8 +42,10 @@
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:text="@string/exam_name"
+                android:inputType="textCapWords"
                 android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewDate"
@@ -48,6 +53,8 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:text="@string/date"
+                android:inputType="date"
+                android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
             <TextView
@@ -56,6 +63,8 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:text="@string/time"
+                android:inputType="time"
+                android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
             <TextView
@@ -64,6 +73,8 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:text="@string/location"
+                android:inputType="textCapWords"
+                android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

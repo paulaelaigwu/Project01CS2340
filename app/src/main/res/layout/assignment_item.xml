@@ -3,8 +3,7 @@
     android:id="@+id/Card_AssignmentItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -25,29 +24,37 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="8dp">
+
             <TextView
                 android:id="@+id/textViewCourseId"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="6dp"
-                android:text="Course ID: "
-                android:textSize="16sp" />
+                android:text="Course ID"
+                android:inputType="textCapCharacters"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
 
             <TextView
                 android:id="@+id/textViewAssignmentName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Assignment Name: "
+                android:text="Assignment Name"
+                android:inputType="textCapWords"
                 android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewDueDate"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="6dp"
-                android:text="Due Date: "
+                android:text="Due Date"
+                android:inputType="date"
+                android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
