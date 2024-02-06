@@ -2,17 +2,28 @@ package com.example.project01cs2340;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.navigation.NavigationBarView;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AssignmentFragment extends Fragment {
@@ -24,6 +35,7 @@ public class AssignmentFragment extends Fragment {
 
     List<Assignment> assignmentList;
     EditText textviewCourseID, textviewAssignmentName, textviewDueDate;
+    Menu menu;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,6 +102,30 @@ public class AssignmentFragment extends Fragment {
                 assignmentDialog.show();
             }
         });
+
+        Spinner spinner = view.findViewById(R.id.spinnerSortAssignments);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+              @Override
+              public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                  if (position == 1) {
+                      Collections.sort(assignmentList, Assignment.AssignmentDueDateComparator);
+                      assignmentAdapter.notifyDataSetChanged();
+                      Log.d(TAG, "onItemSelected: " + assignmentList.toString());
+                      Toast.makeText(getActivity(), "Sorted by Due Date", Toast.LENGTH_LONG).show();
+                  } else if (position == 2) {
+                      Collections.sort(assignmentList, Assignment.AssignmentCourseIdComparator);
+                      assignmentAdapter.notifyDataSetChanged();
+                      Log.d(TAG, "onItemSelected: " + assignmentList.toString());
+
+                      Toast.makeText(getActivity(), "Sorted by CourseId", Toast.LENGTH_LONG).show();
+                  }
+              }
+
+              @Override
+              public void onNothingSelected(AdapterView<?> parent) {
+                  return;
+              }
+          });
 
         recyclerView = (RecyclerView) getView().findViewById(R.id.recyclerViewAssignments);
         recyclerView.setHasFixedSize(true);

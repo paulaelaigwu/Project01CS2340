@@ -31,7 +31,6 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:text="Course ID"
-                android:inputType="textCapCharacters"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:textStyle="bold|italic" />
@@ -42,7 +41,6 @@
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:text="Assignment Name"
-                android:inputType="textCapWords"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -53,7 +51,6 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:text="Due Date"
-                android:inputType="date"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </LinearLayout>

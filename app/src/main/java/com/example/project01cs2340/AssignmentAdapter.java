@@ -46,7 +46,7 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Dialog assignmentDialog = new Dialog(context);
+                final Dialog assignmentDialog = new Dialog(view.getContext());
                 assignmentDialog.setContentView(R.layout.fragment_add_assignment);
                 assignmentDialog.setTitle("Edit Assignment");
 
@@ -123,6 +123,8 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
                 return true;
             }
         });
+
+
     }
 
     @Override
